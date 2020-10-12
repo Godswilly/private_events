@@ -16,6 +16,10 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def join
+    @event_attendee = EventAttendee.new(event_attended_id: params[:id], attendee_id: session[:user_id])
+  end
+
   private
   
   def set_event
