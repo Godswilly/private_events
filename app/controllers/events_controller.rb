@@ -4,14 +4,16 @@ class EventsController < ApplicationController
   end
 
   def index
-    @event = Event.all
+    @events = Event.all
   end
 
   def create
     @event = current_user.events.build(event_params)
+    @event.save
   end
 
   def show
+    @event = Event.find(params[:id])
   end
 
   private
@@ -21,6 +23,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:description, :user_id, :date)
+    params.require(:event).permit(:description, :date, :user_id)
   end
 end

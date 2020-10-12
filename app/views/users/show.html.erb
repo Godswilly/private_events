@@ -5,7 +5,16 @@
   <%= @user.username %>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
+</p> <br/>
+
+  <strong>Events:</strong><br/>
+
+  <% @user.events.each do |event| %>
+                    <strong>DATE :</strong>
+                    <p><%= event.date %></p><br/>
+                    <strong>Description :</strong>
+                    <p><%= event.description %></p><br/>
+    <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

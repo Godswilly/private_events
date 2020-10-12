@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_092112) do
+ActiveRecord::Schema.define(version: 2020_10_12_124409) do
+
+  create_table "event_attendees", force: :cascade do |t|
+    t.integer "users_id"
+    t.integer "events_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["events_id"], name: "index_event_attendees_on_events_id", unique: true
+    t.index ["users_id"], name: "index_event_attendees_on_users_id", unique: true
+  end
 
   create_table "events", force: :cascade do |t|
     t.date "date"
@@ -18,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_10_12_092112) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
+    t.string "attendees"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -30,9 +40,12 @@ ActiveRecord::Schema.define(version: 2020_10_12_092112) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "attended_events"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "event_attendees", "events", column: "events_id"
+  add_foreign_key "event_attendees", "users", column: "users_id"
   add_foreign_key "events", "users"
 end
