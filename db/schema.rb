@@ -17,7 +17,9 @@ ActiveRecord::Schema.define(version: 2020_10_12_134628) do
     t.integer "event_attended_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_attended_id"], name: "index_event_attendees_on_event_attended_id", unique: true
+    t.integer "attendee_id"
+    t.integer "event_attended_id"
+    t.index ["event_attended_id"], name: "index_event_attendees_on_event_event_attended_id", unique: true
     t.index ["attendee_id"], name: "index_event_attendees_on_attendee_id", unique: true
   end
 
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(version: 2020_10_12_134628) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
+    t.string "attendees"
+    t.integer "creator_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -39,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_10_12_134628) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "attended_events"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

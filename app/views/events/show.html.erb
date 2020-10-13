@@ -2,9 +2,15 @@
 
 <p>
   <strong>Creator:</strong>
-  <%= @event.user.username %>
+  <%= @event.user.username %><br/>
+  <%= @event.description %>
 </p>
 
-<%= button_to 'Join Now', events_join_path(@event.id) %> 
+
+
+<%= button_to 'Register for the event', join_events_path %>
+
+
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

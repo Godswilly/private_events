@@ -18,6 +18,10 @@ class EventsController < ApplicationController
 
   def join
     @event_attendee = EventAttendee.new(event_attended_id: params[:id], attendee_id: session[:user_id])
+    @event_attendee.save
+  end
+
+  def update
   end
 
   private
