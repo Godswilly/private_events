@@ -17,9 +17,19 @@
     <% end %>
 
     <strong>Attending Following Events:</strong><br/>
-  <% @user.event_attendee.each do |t| %>
+  <% @user.event_attended.each do |t| %>
 
-    <%= t.attendee_id %> </br>
+    <%= t.description %> </br>
+  <% end %>
+
+<h1>upcoming events</h1>
+  <% @upcoming_events.each do |event|%>
+    <%= event.description%>
+  <% end %>
+
+  <h1>past events</h1>
+  <% @past_events.each do |event|%>
+    <%= event.description%>
   <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

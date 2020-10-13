@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @upcoming_events = current_user.event_attended.upcoming_events
+    @past_events = current_user.event_attended.past_events
   end
 
   # GET /users/new
