@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :events
   resources :event_attendees
 
-  resources :events do
-    match '/join', to: 'events#join', via: :post, on: :collection
+  resources :event_attendees do
+    match '/join', to: 'event_attendees#join', via: :post, on: :collection
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "events#index"

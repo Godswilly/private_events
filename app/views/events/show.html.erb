@@ -8,7 +8,7 @@
 
 
 
-<%= button_to 'Register for the event', join_events_path %>
+<%= button_to 'Register for the event', join_event_attendees_path(@event.id), method: :post %>
 
 
 
