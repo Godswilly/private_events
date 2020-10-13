@@ -6,7 +6,11 @@
   <%= @event.description %>
 </p>
 
+<strong>Event Attendees:</strong><br/>
+<% @event.attendees.each do |f| %>
 
+    <%= f.username %> </br>
+<% end %>
 
 <%= button_to 'Register for the event', join_event_attendees_path(id: @event.id), method: :post %>
 

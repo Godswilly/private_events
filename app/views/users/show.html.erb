@@ -16,5 +16,11 @@
                     <p><%= event.description %></p><br/>
     <% end %>
 
+    <strong>Attending Following Events:</strong><br/>
+  <% @user.event_attendee.each do |t| %>
+
+    <%= t.attendee_id %> </br>
+  <% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
