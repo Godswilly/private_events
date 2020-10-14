@@ -1,11 +1,17 @@
+<div class="flex items-center flex-col mt-10">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
+<div class='flex my-3 flex-col'>
+  <div class='flex'>
+  <strong class='mr-2'>Username:</strong>
   <%= @user.username %>
-  <strong>Email:</strong>
+  </div>
+  <div class='flex'>
+  <strong class='mr-2'>Email:</strong>
   <%= @user.email %>
-</p> <br/>
+  </div>
+  
+</div>
 
   <strong>Events:</strong><br/>
 
@@ -32,5 +38,8 @@
     <%= event.description%>
   <% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="flex mt-3">
+<%= link_to 'Edit', edit_user_path(@user), class: "mx-3" %> |
+<%= link_to 'Back', users_path, class: "mx-3" %>
+</div>
+</div>

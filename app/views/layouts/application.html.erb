@@ -14,6 +14,8 @@
   <nav class="bg-gray-800 flex flex-row justify-between py-5">
     <h1 class="text-gray-100 text-2xl ml-5">Private Events</h1>
     <div class="flex flex-row mx-5">
+      <%= link_to "Events", events_path, class: "text-gray-100 text-lg mx-3 capitalize" %>
+      <%= link_to "Users", users_path, class: "text-gray-100 text-lg mx-3 capitalize" %>
           <% if user_signed_in? %>
             <p>
               <%= link_to current_user.username, edit_user_registration_path, class: "text-gray-100 text-lg mx-3 capitalize" %>

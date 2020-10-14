@@ -1,29 +1,37 @@
 <div class="flex items-center flex-col mt-10">
-<h1 class="text-2xl mb-3">Events List</h1>
+<h1 class="text-2xl mb-4">Events List</h1>
 <strong>Upcoming Events</strong><br>
 
      <% @upcoming_events.each do |event| %>
                 <div class="flex my-3">
-                    <strong>Event Date:</strong>
+                    <strong class='mr-2'>Event Date:</strong>
                     <p><%= event.date %></p>
                 </div>
                 <div class="flex my-3">
-                    <strong>Event Creator:</strong>
+                    <strong class='mr-2'>Event Creator:</strong>
                     <p><%= event.user.username %></p>
                 </div>
                 <div class="my-3 text-center">
-                    <strong>Event Description:</strong>
+                    <strong class='mr-2'>Event Description:</strong>
                     <p><%= event.description %></p>
                 </div>
+        <%= link_to 'Event', event %>
     <% end %>
 
-<strong>Past Events</strong><br>
+<strong class='mt-3'>Past Events</strong><br>
     <% @past_events.each do |event| %>
-    
-                    <strong><%= event.date %></strong><br/>
-                    
-                    <small><%= event.user.username %></small><br/>
-                    
+                <div class="flex my-3">
+                <strong class='mr-2'>Event Date:</strong>
+                    <strong><%= event.date %></strong>
+                </div>
+                    <div class="flex my-3">
+                        <strong class='mr-2'>Event Creator:</strong>
+                    <p><%= event.user.username %></p>
+                    </div>
+                    <div class="my-3 text-center">
+                    <strong class='mr-2'>Event Description:</strong>
                     <p><%= event.description %></p>
+                    </div>
+        <%= link_to 'Event', event %>
     <% end %>
 </div>
