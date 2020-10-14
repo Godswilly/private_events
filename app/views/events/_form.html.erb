@@ -12,14 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :date %>
+  <div class="flex justify-between my-4">
+    <p class="mr-10"><%= form.label :date %></p>
     <%= form.date_field :date %>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  </div>
+   <div class="flex">
+   <p class="mr-4"><%= form.label :description %></p>
+    <%= form.text_area :description, class: "border border-opacity-75" %>
+  </div>
   </div>
 
   <div class="actions">
-  <% link_to "submit", events_index_path %>
-    <%= form.submit %>
+  <p class="text-teal-500 mx-6 p-3 px-6 rounded-full bg-gray-900 text-center"><% link_to "submit", events_index_path %>
+    <%= form.submit %></p>
   </div>
 <% end %>

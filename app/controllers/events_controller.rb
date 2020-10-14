@@ -11,19 +11,18 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
     @event.save
+
+    redirect_to events_index_path
   end
 
   def show
     @event = Event.find(params[:id])
   end
 
-  
-
-  def update
-  end
+  def update; end
 
   private
-  
+
   def set_event
     @event = event.find(params[:id])
   end

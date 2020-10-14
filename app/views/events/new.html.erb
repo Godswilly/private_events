@@ -1,7 +1,10 @@
-
-<h1>New Event</h1>
-
+<div class="flex items-center flex-col mt-10">
+<h1 class="text-2xl mb-4">New Event</h1>
+<div class="border-gray-500 border p-3 rounded">
 <%= render 'form', event: @event %>
+<div class="flex justify-center">
+<%= button_to 'Back', events_index_path, class: "text-teal-500 p-3 px-6 rounded-full bg-gray-900 mx-auto" %>
 
-<%= link_to 'Back', events_index_path %>
+</div>
+</div>
 
