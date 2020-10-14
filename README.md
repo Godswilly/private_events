@@ -9,8 +9,6 @@
 * Users can create and attend events
 * Events are categorized in past and upcoming events based on their date
 
-## This web app is live, you can check it here: [Live demo](https://obscure-sierra-39976.herokuapp.com/)
-
 
 ## Built With
 * Ruby
