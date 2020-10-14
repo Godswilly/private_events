@@ -1,13 +1,20 @@
-<h1>Events List</h1>
+<div class="flex items-center flex-col mt-10">
+<h1 class="text-2xl mb-3">Events List</h1>
 <strong>Upcoming Events</strong><br>
 
      <% @upcoming_events.each do |event| %>
-    
-                    <strong><%= event.date %></strong><br/>
-                    
-                    <small><%= event.user.username %></small><br/>
-                    
+                <div class="flex my-3">
+                    <strong>Event Date:</strong>
+                    <p><%= event.date %></p>
+                </div>
+                <div class="flex my-3">
+                    <strong>Event Creator:</strong>
+                    <p><%= event.user.username %></p>
+                </div>
+                <div class="my-3 text-center">
+                    <strong>Event Description:</strong>
                     <p><%= event.description %></p>
+                </div>
     <% end %>
 
 <strong>Past Events</strong><br>
@@ -19,3 +26,4 @@
                     
                     <p><%= event.description %></p>
     <% end %>
+</div>

@@ -1,20 +1,29 @@
+<div class="flex items-center flex-col mt-10">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @event.user.username %><br/>
-  <%= @event.description %>
-</p>
 
-<strong>Event Attendees:</strong><br/>
+ <div class="flex my-3">
+  <strong>Event Creator:</strong>
+  <%= @event.user.username %><br/>
+ </div> 
+ <div class="flex my-3">
+  <strong>Event Description:</strong>
+  <%= @event.description %>
+ </div>
+
+<div class="flex my-3">
+<strong  class="text-center">Event Attendees:</strong>
 <% @event.attendees.each do |f| %>
 
-    <%= f.username %> </br>
+
+    <%= f.username %> 
 <% end %>
+</div>
+<%= button_to 'Register for the event', join_event_attendees_path(id: @event.id), method: :post, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
 
-<%= button_to 'Register for the event', join_event_attendees_path(id: @event.id), method: :post %>
 
-
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div class="flex mt-3">
+<%= link_to 'Edit', edit_event_path(@event), class: "mx-3" %> |
+<%= link_to 'Back', events_path, class: "mx-3" %>
+</div>
+</div>
