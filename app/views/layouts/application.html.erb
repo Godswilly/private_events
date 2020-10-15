@@ -6,10 +6,34 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <nav class="bg-gray-800 flex flex-row justify-between py-5">
+    <h1 class="text-gray-100 text-2xl ml-5"><%= link_to "Private Events ", root_path, class: "hover:none" %></h1>
+    <div class="flex flex-row mx-5">
+      <%= link_to "Events", events_path, class: "text-gray-100 text-lg mx-3 capitalize" %>
+      <%= link_to "Users", users_path, class: "text-gray-100 text-lg mx-3 capitalize" %>
+          <% if user_signed_in? %>
+            <p>
+              <%= link_to current_user.username, edit_user_registration_path, class: "text-gray-100 text-lg mx-3 capitalize" %>
+            </p>
+            <p> 
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "text-gray-100 text-lg mx-3 capitalize" %>
+            </p>
+          <% else %>
+	          <p>
+              <%= link_to 'Sign Up', new_user_registration_path, class: "text-gray-100 text-lg mx-3 capitalize" %>
+            </p>
+            <p>
+              <%= link_to 'Sign In', new_user_session_path, class: "text-gray-100 text-lg mx-3 capitalize" %>
+            </p>
+          <% end %>
+          </div>
+  </nav>
+ 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

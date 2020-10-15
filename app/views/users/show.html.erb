@@ -1,9 +1,39 @@
+<div class="flex items-center flex-col mt-10">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
+<div class='flex my-3 flex-col'>
+  <div class='flex'>
+  <strong class='mr-2'>Username:</strong>
   <%= @user.username %>
-</p>
+  </div>
+  <div class='flex'>
+  <strong class='mr-2'>Email:</strong>
+  <%= @user.email %>
+  </div>
+  
+</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <strong>Events:</strong><br/>
+
+  <% @user.events.each do |event| %>
+                    <strong>DATE :</strong>
+                    <p><%= event.date %></p><br/>
+                    <strong>Description :</strong>
+                    <p><%= event.description %></p><br/>
+    <% end %>
+
+<h1>upcoming events</h1>
+  <% @upcoming_events.each do |event|%>
+    <%= event.description%>
+  <% end %>
+
+  <h1>past events</h1>
+  <% @past_events.each do |event|%>
+    <%= event.description%>
+  <% end %>
+
+<div class="flex mt-3">
+<%= link_to 'Edit', edit_user_path(@user), class: "mx-3" %> |
+<%= link_to 'Back', users_path, class: "mx-3" %>
+</div>
+</div>
