@@ -43,6 +43,14 @@ Run `rails s` to start the rails server.<br>
 You can visit the app at `http://localhost:3000`.<br>
 
 
+## Run Test
+*$ rspec
+
+## Live Demo
+
+[Live Demo Link](https://private-events-123.herokuapp.com/)
+
+
 ## Authors
 
 👤 **Gürbüz Ertunga**
@@ -57,7 +65,6 @@ You can visit the app at `http://localhost:3000`.<br>
 - Github: [@Godswilly](https://github.com/Godswilly)
 - Linkedin: [Kalu Agu Kalu](https://www.linkedin.com/in/kalu-agu-kalu/)
 - Twitter: [@KaluAguKalu17](https://twitter.com/KaluAguKalu17)
-- Email: (kalu.agukalu@gmail.com)
 
 ## 🤝 Contributing
 
