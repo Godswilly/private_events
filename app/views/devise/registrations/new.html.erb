@@ -6,12 +6,12 @@
 
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "border border-teal-500 rounded mb-2" %>
+    <%= f.text_field :username, autofocus: true, class: "border border-teal-500 rounded mb-2", id: 'username' %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email", class: "border border-teal-500 rounded mb-2" %>
+    <%= f.email_field :email, autocomplete: "email", class: "border border-teal-500 rounded mb-2", id: 'email' %>
   </div>
 
   <div class="field">
@@ -19,12 +19,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "border border-teal-500 rounded mb-2" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "border border-teal-500 rounded mb-2", id: 'password' %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "border border-teal-500 rounded mb-2" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "border border-teal-500 rounded mb-2", id: 'password_confirmation' %>
   </div>
 
   <div class="actions flex justify-center">
