@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'events/index'
   devise_for :users, :controllers => { registrations: 'registrations'}
   resources :users
-  resources :events
+  resources :events, only: [:new, :create, :show, :index, :edit]
   resources :event_attendees
 
   resources :event_attendees do

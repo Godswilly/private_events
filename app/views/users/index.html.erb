@@ -4,14 +4,16 @@
 <h1 class="text-lg text-blue-700 mb-5">Users</h1>
 
       <p class="text-sm text-gray-700">Username</p>
-<div class="flex my-3">
+
     <% @users.each do |user| %>
+    <div class="flex my-3 flex-wrap">
         <p class="mr-5 capitalize"><%= user.username %></p>
         <p class="mr-5"><%= link_to 'Show', user %></p>
         <p  class="mr-5"><%= link_to 'Edit', edit_user_path(user) %></p>
         <p  class="mr-5"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
     <% end %>
-</div>
+
             
 
             

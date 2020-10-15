@@ -39,5 +39,7 @@
     </div>
 </div>
 </div>
+<% if user_signed_in? %>
 <%= button_to 'New Event', events_new_path, method: :get, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold mt-3 py-2 px-4 rounded-full" %>
+<% end %>
 </div>

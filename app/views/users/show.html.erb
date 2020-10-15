@@ -22,12 +22,6 @@
                     <p><%= event.description %></p><br/>
     <% end %>
 
-    <strong>Attending Following Events:</strong><br/>
-  <% @user.event_attended.each do |t| %>
-
-    <%= t.description %> </br>
-  <% end %>
-
 <h1>upcoming events</h1>
   <% @upcoming_events.each do |event|%>
     <%= event.description%>

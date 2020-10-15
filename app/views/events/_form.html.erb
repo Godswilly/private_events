@@ -23,7 +23,7 @@
   </div>
 
   <div class="actions">
-  <p class="text-teal-500 mx-6 p-3 px-6 rounded-full bg-gray-900 text-center"><% link_to "submit", events_index_path %>
-    <%= form.submit %></p>
+  <% link_to "submit", events_index_path %>
+    <%= form.submit "CREATE A NEW EVENT", class: "text-teal-500 p-3 px-6 rounded-full bg-gray-900 text-center mx-auto" %>
   </div>
 <% end %>

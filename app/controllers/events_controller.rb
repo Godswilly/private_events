@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: %i[edit update destroy]
+
   def new
     @event = Event.new
   end
